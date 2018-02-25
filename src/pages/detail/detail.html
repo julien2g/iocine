@@ -1,0 +1,47 @@
+<!--
+  Generated template for the DetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<img src="{{imgPath}}{{detail.backdrop_path}}"/>
+  <h1>{{detail.original_title}}</h1>
+  <p>{{detail.overview}}</p>
+  <ion-col col-6 *ngFor="let genre of detail.genres">
+  <button (click)="goToGenre(genre.id, genre.name)" >{{genre.name}}</button>
+  </ion-col>
+
+  <h3>Cast</h3>
+  <ion-grid>
+    <ion-row> 
+      <ion-col col-6 *ngFor="let cast of credits" no-padding>
+        <ion-card no-padding style="height: 240px!important;">
+          <ion-card-content>
+            <img (click)="goToDetail(cast.id, cast.poster)" src="{{cast.poster}}"/> 
+          </ion-card-content>
+          <ion-row>
+            <h4>{{cast.name}} </h4> 
+            <h5>{{cast.character}}</h5>  
+
+          </ion-row>
+
+                
+        </ion-card>
+               
+      </ion-col>
+    </ion-row>
+      
+  </ion-grid>
+
+
+</ion-content>
