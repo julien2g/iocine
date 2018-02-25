@@ -15,6 +15,10 @@ import {HttpModule} from "@angular/http";
 import {DetailPage} from "../pages/detail/detail";
 import {ActorPage} from "../pages/actor/actor";
 import {GenreDetailPage} from "../pages/genre-detail/genre-detail";
+import {File} from "@ionic-native/file";
+import {FileTransfer} from "@ionic-native/file-transfer";
+import {FileOpener} from "@ionic-native/file-opener";
+
 
 @NgModule({
   declarations: [
@@ -47,7 +51,10 @@ import {GenreDetailPage} from "../pages/genre-detail/genre-detail";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    apiService
+    apiService,
+    File,
+    FileTransfer,
+    FileOpener
   ]
 })
 export class AppModule {}

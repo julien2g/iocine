@@ -19,6 +19,7 @@ export class ActorPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public apiService: apiService) {
     this.getPeople(navParams.get('id'));
+
     console.log(this.detail.profile_path);
   }
 
